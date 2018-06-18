@@ -13,12 +13,13 @@ before_install:
 - chmod +x bazel-0.14.1-installer-linux-x86_64.sh
 - ./bazel-0.14.1-installer-linux-x86_64.sh --user
 - export PATH=$HOME/bin:$PATH
+- which gcc
 
 install:
 - echo 'build --jobs=4 --curses=no --verbose_failures' >> $HOME/.bazelrc
 - echo "import %workspace%/tools/bazelrc/linux-$CC" >> $HOME/.bazelrc
 
-script: bazel build @haskell_clock//:clock
+script: bazel build @haskell_clock//:clock -s --sandbox_debug
 
 git:
   depth: 1
