@@ -16,8 +16,9 @@ before_install:
 - which gcc
 
 install:
-- echo 'build --jobs=4 --curses=no --verbose_failures' >> $HOME/.bazelrc
-- echo "import %workspace%/tools/bazelrc/linux-$CC" >> $HOME/.bazelrc
+- ls *
+  #- echo 'build --jobs=4 --curses=no --verbose_failures' >> $HOME/.bazelrc
+  #- echo "import %workspace%/tools/bazelrc/linux-$CC" >> $HOME/.bazelrc
 
 script: bazel build @haskell_clock//:clock -s --sandbox_debug
 
