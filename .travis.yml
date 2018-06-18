@@ -16,7 +16,7 @@ before_install:
 - which gcc
 
 install:
-- ls *
+- find / # this is ugly, but I will find where is cc1
   #- echo 'build --jobs=4 --curses=no --verbose_failures' >> $HOME/.bazelrc
   #- echo "import %workspace%/tools/bazelrc/linux-$CC" >> $HOME/.bazelrc
 
