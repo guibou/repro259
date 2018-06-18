@@ -5,6 +5,7 @@ addons:
   apt:
     packages:
     - realpath
+    - build-essential
 
 before_install:
 - rm -rf $HOME/.cache/bazel/_bazel_$USER/install
